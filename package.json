@@ -1,0 +1,15 @@
+{
+  "name": "keynote",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "fstream": "^1.0.11",
+    "multipipe": "^2.0.3",
+    "node-protobuf": "^1.4.3",
+    "snappy": "^6.0.2",
+    "snappy-stream": "^3.0.0",
+    "through2": "^2.0.3",
+    "unzip": "^0.1.11",
+    "varint": "^5.0.0"
+  }
+}

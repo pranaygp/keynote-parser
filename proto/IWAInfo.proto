@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+message ArchiveInfo {
+  optional uint64 identifier = 1;
+  repeated MessageInfo message_infos = 2;
+}
+
+message MessageInfo {
+  required uint32 type = 1;
+  repeated uint32 version = 2 [packed = true];
+  required uint32 length = 3;
+  repeated uint64 object_references = 5 [packed = true];
+  repeated uint64 data_references = 6 [packed = true];
+}
