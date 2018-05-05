@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 const through2 = require('through2')
 const Protobuf = require("node-protobuf")
@@ -8,7 +9,7 @@ const baseMessageTypes = require('./baseMessageTypes')
 const keynoteMessageTypes = require('./keynoteMessageTypes')
 
 module.exports = () => {
-  const pb = new Protobuf(fs.readFileSync('types.desc'))
+  const pb = new Protobuf(fs.readFileSync(path.join(__dirname, 'types.desc')))
   return through2.obj(function (chunk, enc, cb) {
     let cursor = 0;
     while(cursor < chunk.length) {
