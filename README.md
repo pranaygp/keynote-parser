@@ -30,3 +30,7 @@ There are mny different types that you might see and so I haven't spent the time
 # Local setup
 
 Just `git clone` and `npm install` as usual, but the important added step here is that you need to install `protoc` before you can run the `npm run build` step. The easiest way to get `protoc` setup is to go [here](https://github.com/google/protobuf/releases) and download one of the `protoc-{version}-{platform}.zip` files
+
+# Thanks
+
+This library would not have been possible if it wasn't for the all the work done by @obriensp in 2013 that he documented [here](https://github.com/obriensp/iWorkFileFormat/blob/master/Docs/index.md)
