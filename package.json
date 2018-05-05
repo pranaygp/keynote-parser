@@ -2,6 +2,9 @@
   "name": "keynote",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "build": "protoc --proto_path=proto proto/*.proto IWAInfo.proto -o types.desc"
+  },
   "dependencies": {
     "fstream": "^1.0.11",
     "multipipe": "^2.0.3",
