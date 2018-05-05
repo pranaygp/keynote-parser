@@ -14,11 +14,9 @@ const keynote = require('keynote')
 
 const keynoteFile = fs.createReadStream('myPresentation.key')
 
-keynoteFile
-  .pipe(keynote()) // Returns an object stream
-  .on('data', data => {
-    // use data
-  })
+const data = await keynote(keynoteFile);
+
+// use data
 ```
 
 # Format for `data`
