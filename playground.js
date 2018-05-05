@@ -3,7 +3,7 @@ const path = require('path')
 
 const keynote = require('./')
 
-const keynoteFilePath = path.resolve(__dirname, '..', 'test.key')
+const keynoteFilePath = path.resolve(__dirname, 'test', 'fixtures', 'test.key')
 
 async function main() {
   const inputKeyfileStream = fs.createReadStream(keynoteFilePath);
