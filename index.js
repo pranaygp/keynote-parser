@@ -1,5 +1,4 @@
 const fs = require('fs');
-const fsp = require('fs/promises')
 const os = require('os');
 const path = require('path');
 
@@ -26,13 +25,13 @@ function extractIWAFile(iwaFileStream, keynoteArchivesMap) {
 
 function keynote(inputKeyfileStream) {
   return new Promise(async (resolve, reject) => {
-    const tmpDir = await fsp.mkdtemp(path.join(os.tmpdir(), 'keynoteParser-'));
+    const tmpDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'keynoteParser-'));
     const outputDirectoryWriter = fstream.Writer(tmpDir);
 
     const keynoteArchivesMap = {}
 
     outputDirectoryWriter.on('close', async () => {
-      const indexFiles = await fsp.readdir(path.join(tmpDir, 'Index'))
+      const indexFiles = await fs.promises.readdir(path.join(tmpDir, 'Index'))
       const iwaFiles = indexFiles.filter(a => a.endsWith('.iwa')).map(fName => path.join(tmpDir, 'Index', fName))
 
       const errors = await Promise.all(iwaFiles.map(fPath => fs.createReadStream(fPath)).map(stream => extractIWAFile(stream, keynoteArchivesMap)))
