@@ -10,7 +10,7 @@ npm install --save keynoteParser
 
 ```javascript
 const fs = require('fs')
-const keynote = require('keynote')
+const keynote = require('keynote-parser')
 
 const keynoteFile = fs.createReadStream('myPresentation.key')
 
